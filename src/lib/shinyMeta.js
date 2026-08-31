@@ -11,6 +11,7 @@ export const BADGE_FLAGS = [
   ['Honey Tree', 'Honey', 'honey.png'],
   ['Event', 'Event', 'event.png'],
   ['Secret Shiny', 'Secret', 'secretshiny.png'],
+  ['Killed', 'Killed', 'killed.png'],
 ]
 
 export const TROPHIES = [
@@ -36,6 +37,7 @@ export const TAG_CLASS_BY_LABEL = {
   Legend: 'tagLegend',
   Mystery: 'tagMystery',
   Reaction: 'tagReaction',
+  Killed: 'tagKilled',
 }
 
 export function isTruthyFlag(value) {

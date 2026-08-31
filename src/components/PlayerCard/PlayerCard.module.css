@@ -311,3 +311,9 @@
   color: #fff176;
   border: 1px solid rgba(255, 235, 59, 0.35);
 }
+
+.tagKilled {
+  background-color: rgba(97, 97, 97, 0.25);
+  color: #bdbdbd;
+  border: 1px solid rgba(97, 97, 97, 0.45);
+}

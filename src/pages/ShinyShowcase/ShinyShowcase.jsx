@@ -16,6 +16,7 @@ const SHINY_FILTERS = [
   { label: 'Honey Tree', key: 'Honey Tree' },
   { label: 'Secret Shiny', key: 'Secret Shiny' },
   { label: 'Event', key: 'Event' },
+  { label: 'Killed', key: 'Killed' },
 ]
 
 function isTruthyFlag(value) {
@@ -134,9 +135,6 @@ export default function ShinyShowcase() {
 
       {hasMore && <div ref={sentinelRef} style={{ height: 1 }} />}
 
-      <footer className={styles.footer}>
-        <a href={`${import.meta.env.BASE_URL}admin`}>Admin</a>
-      </footer>
     </div>
   )
 }

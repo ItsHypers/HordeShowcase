@@ -14,6 +14,7 @@ export const FLAGS = [
   ['Sold', 'Sold'],
   ['Reaction', 'Reaction'],
   ['MysteriousBall', 'Mysterious Ball'],
+  ['Killed', 'Killed'],
 ]
 
 // Shorthand tags accepted in the Bulk Add textarea, e.g. "Bulbasaur (egg, ss)".
@@ -40,6 +41,8 @@ const FLAG_ALIASES = {
   mb: 'MysteriousBall',
   mysteryball: 'MysteriousBall',
   'mysterious ball': 'MysteriousBall',
+  killed: 'Killed',
+  kill: 'Killed',
 }
 
 // Resolves a shorthand tag (case-insensitive) to its canonical flag key, or null if unrecognized.
