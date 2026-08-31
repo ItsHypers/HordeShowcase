@@ -5,12 +5,17 @@ A Horde-themed shiny Pokémon leaderboard, built with React + Vite and deployed 
 ## Data sources
 
 - `data/shiny_database` – raw per-player shiny collections (source of truth, not committed to the client bundle).
-- `pokemon-data.json` – used only at build time to resolve sprite URLs and legendary/mythical flags.
-- `generation.json` / `osw-encounter-tiers.json` – available for future features (evolution lines, tier points).
+- `data/generation.json` – full Pokedex grouped by generation/evolution line; flattened at build time into `public/data/pokemon-names.json`, which powers the admin "Add a Shiny" autocomplete.
+- `data/pokemon-data.json` / `data/osw-encounter-tiers.json` – available for future features (species metadata, tier points).
+- `images/logo.png` – source site logo, copied to `public/images/logo.png` at build time.
+- `public/images/pokemon_gifs/` – local animated gif sprites, one per species (normalized lowercase, hyphenated filename).
 
-`scripts/build-data.mjs` reads these and writes lightweight `public/data/players.json` and
-`public/data/species.json` files that the site fetches at runtime. The 34MB `pokemon-data.json`
-never ships to the browser.
+`scripts/build-data.mjs` reads the `data/` source files and writes the lightweight
+`public/data/players.json` and `public/data/pokemon-names.json` files that the site
+fetches at runtime, and copies `images/logo.png` into `public/images/`. Sprites are
+resolved client-side to `images/pokemon_gifs/<normalized-name>.gif` instead of a
+generated species map.
+
 
 ## Development
 

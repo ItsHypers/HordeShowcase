@@ -1,0 +1,206 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  border: 1px solid var(--horde-gold, #d4af37);
+  background: transparent;
+  color: var(--text-light, #f0e6d6);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--horde-red, #8a0303);
+  border-color: var(--horde-red-bright, #c11a1a);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--horde-gold, #d4af37);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.showcaseButton {
+  border: 1px solid var(--horde-gold, #d4af37);
+  background: transparent;
+  color: var(--text-light, #f0e6d6);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.showcaseButton:hover {
+  transform: translateY(-1px);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(20, 10, 8, 0.65);
+  border: 1px solid var(--horde-gold, #d4af37);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cardTitle {
+  margin: 0 0 4px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+}
+
+.field input,
+.field textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background: rgba(11, 7, 5, 0.8);
+  border: 1px solid var(--horde-gold, #d4af37);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--text-light, #f0e6d6);
+}
+
+.textarea {
+  resize: vertical;
+  font-family: 'Courier New', monospace;
+}
+
+.hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(240, 230, 214, 0.75);
+}
+
+.hint code {
+  color: var(--horde-gold, #d4af37);
+}
+
+.bulkPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bulkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bulkItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(11, 7, 5, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 400;
+}
+
+.removeButton {
+  border: none;
+  background: transparent;
+  color: #ff8080;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.flagGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.flagGrid legend {
+  padding: 0 6px;
+  color: var(--horde-gold, #d4af37);
+  font-weight: 700;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.submitButton,
+.logoutButton {
+  align-self: flex-start;
+  border: 1px solid var(--horde-red-bright, #c11a1a);
+  background: var(--horde-red, #8a0303);
+  color: var(--text-light, #f0e6d6);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.submitButton:hover,
+.logoutButton:hover {
+  transform: translateY(-1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: #ff8080;
+  font-weight: 600;
+}
+
+.success {
+  color: #8fd68f;
+  font-weight: 600;
+}

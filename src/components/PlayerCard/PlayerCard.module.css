@@ -27,6 +27,27 @@
   flex: 1;
 }
 
+.trophy {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.85));
+}
+
+.rankGold {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+}
+
+.rankSilver {
+  color: #c9d2da;
+  text-shadow: 0 0 8px rgba(201, 210, 218, 0.8);
+}
+
+.rankBronze {
+  color: #cd7f32;
+  text-shadow: 0 0 8px rgba(205, 127, 50, 0.8);
+}
+
 .count {
   font-size: 0.85rem;
   color: var(--horde-red-bright, #c11a1a);
@@ -54,6 +75,43 @@
   transform: translateY(-3px);
   border-color: var(--horde-red-bright, #c11a1a);
   z-index: 5;
+}
+
+.alphaGlow {
+  border-color: #ff2b2b;
+  box-shadow: 0 0 8px rgba(255, 30, 30, 0.85), 0 0 16px rgba(255, 30, 30, 0.5);
+  animation: alphaPulse 1.8s ease-in-out infinite;
+}
+
+.secretGlow {
+  border-color: #ffe066;
+  box-shadow: 0 0 8px rgba(255, 224, 102, 0.85), 0 0 16px rgba(255, 224, 102, 0.5);
+  animation: secretPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes alphaPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 30, 30, 0.85), 0 0 16px rgba(255, 30, 30, 0.5); }
+  50% { box-shadow: 0 0 14px rgba(255, 30, 30, 1), 0 0 26px rgba(255, 30, 30, 0.7); }
+}
+
+@keyframes secretPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 224, 102, 0.85), 0 0 16px rgba(255, 224, 102, 0.5); }
+  50% { box-shadow: 0 0 14px rgba(255, 224, 102, 1), 0 0 26px rgba(255, 224, 102, 0.7); }
+}
+
+.iconRow {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  gap: 2px;
+  z-index: 4;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.9));
 }
 
 .sprite {
@@ -96,10 +154,95 @@
   margin-top: 4px;
 }
 
-.badge {
-  background: var(--horde-red, #8a0303);
-  color: var(--text-light, #f0e6d6);
-  border-radius: 6px;
-  padding: 1px 5px;
-  font-size: 10px;
+.tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tagSecret {
+  background-color: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.tagAlpha {
+  background-color: rgba(229, 57, 53, 0.2);
+  color: #ef5350;
+  border: 1px solid rgba(229, 57, 53, 0.4);
+}
+
+.tagEgg {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tagSafari {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.tagHoney {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #ffa726;
+  border: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+.tagFossil {
+  background-color: rgba(141, 110, 99, 0.24);
+  color: #bcaaa4;
+  border: 1px solid rgba(141, 110, 99, 0.45);
+}
+
+.tagFishing {
+  background-color: rgba(3, 169, 244, 0.2);
+  color: #4fc3f7;
+  border: 1px solid rgba(3, 169, 244, 0.4);
+}
+
+.tagSwarm {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.tagHeadbutt {
+  background-color: rgba(121, 85, 72, 0.2);
+  color: #a1887f;
+  border: 1px solid rgba(121, 85, 72, 0.4);
+}
+
+.tagEvent {
+  background-color: rgba(0, 188, 212, 0.2);
+  color: #26c6da;
+  border: 1px solid rgba(0, 188, 212, 0.4);
+}
+
+.tagFav {
+  background-color: rgba(233, 30, 99, 0.2);
+  color: #ec407a;
+  border: 1px solid rgba(233, 30, 99, 0.4);
+}
+
+.tagLegend {
+  background-color: rgba(156, 39, 176, 0.2);
+  color: #ba68c8;
+  border: 1px solid rgba(156, 39, 176, 0.4);
+}
+
+.tagMystery {
+  background-color: rgba(63, 81, 181, 0.2);
+  color: #7986cb;
+  border: 1px solid rgba(63, 81, 181, 0.4);
+}
+
+.tagReaction {
+  background-color: rgba(255, 235, 59, 0.15);
+  color: #fff176;
+  border: 1px solid rgba(255, 235, 59, 0.35);
 }

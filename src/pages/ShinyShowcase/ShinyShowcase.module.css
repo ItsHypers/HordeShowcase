@@ -4,6 +4,13 @@
   padding: 24px 20px 60px;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.5;
+  font-size: 0.85rem;
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -19,6 +26,16 @@
   width: 84px;
   height: 84px;
   filter: drop-shadow(0 0 10px rgba(138, 3, 3, 0.9));
+}
+
+/* Looks like a plain image - the admin login shortcut is intentionally undiscoverable. */
+.crestButton {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  display: block;
 }
 
 .title {

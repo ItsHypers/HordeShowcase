@@ -91,7 +91,14 @@ export default function ShinyShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.hero}>
-        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Horde Crest" className={styles.crest} />
+        <button
+          type="button"
+          className={styles.crestButton}
+          onClick={() => { window.location.href = `${import.meta.env.BASE_URL}admin` }}
+          aria-label="Horde Crest"
+        >
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Horde Crest" className={styles.crest} />
+        </button>
         <div>
           <h1 className={styles.title}>Horde's Shiny Showcase</h1>
           <p className={styles.subtitle}>
@@ -126,6 +133,10 @@ export default function ShinyShowcase() {
       </div>
 
       {hasMore && <div ref={sentinelRef} style={{ height: 1 }} />}
+
+      <footer className={styles.footer}>
+        <a href={`${import.meta.env.BASE_URL}admin`}>Admin</a>
+      </footer>
     </div>
   )
 }
