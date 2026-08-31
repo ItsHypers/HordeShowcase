@@ -1,5 +1,7 @@
 # Horde's Shiny Showcase
 
+https://itshypers.github.io/HordeShowcase/
+
 A Horde-themed shiny Pokémon leaderboard, built with React + Vite and deployed to GitHub Pages.
 
 ## Data sources
