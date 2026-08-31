@@ -1,0 +1,101 @@
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--horde-gold, #d4af37);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 40px 24px 32px;
+  margin-bottom: 32px;
+  border-radius: 20px;
+  border: 2px solid var(--horde-gold, #d4af37);
+  background:
+    radial-gradient(ellipse at top, rgba(193, 26, 26, 0.35), transparent 65%),
+    linear-gradient(160deg, rgba(59, 36, 26, 0.95), rgba(11, 7, 5, 0.98));
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6), 0 0 80px rgba(212, 175, 55, 0.15);
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: -40% -10%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(212, 175, 55, 0.15) 40deg, transparent 90deg);
+  animation: bannerSpin 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bannerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bannerTrophy {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.85));
+}
+
+.bannerName {
+  position: relative;
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  text-shadow: 0 0 16px rgba(193, 26, 26, 0.9), 0 0 32px rgba(212, 175, 55, 0.4);
+}
+
+.bannerSubtitle {
+  position: relative;
+  margin: 8px 0 0;
+  color: rgba(240, 230, 214, 0.85);
+  font-size: 1.05rem;
+}
+
+.statRow {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.statPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light, #f0e6d6);
+}
+
+.statIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    padding: 32px 16px 24px;
+  }
+}
