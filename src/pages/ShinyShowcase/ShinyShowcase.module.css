@@ -1,0 +1,74 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--horde-gold, #d4af37);
+}
+
+.crest {
+  width: 84px;
+  height: 84px;
+  filter: drop-shadow(0 0 10px rgba(138, 3, 3, 0.9));
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: rgba(240, 230, 214, 0.8);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0 24px;
+}
+
+.filterChip {
+  border: 1px solid var(--horde-gold, #d4af37);
+  background: rgba(20, 10, 8, 0.65);
+  color: var(--text-light, #f0e6d6);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filterChip:hover {
+  transform: translateY(-1px);
+}
+
+.filterChipActive {
+  background: var(--horde-red, #8a0303);
+  border-color: var(--horde-red-bright, #c11a1a);
+}
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}

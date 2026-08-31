@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --horde-red: #8a0303;
+  --horde-red-bright: #c11a1a;
+  --horde-black: #0b0705;
+  --horde-iron: #2a2422;
+  --horde-leather: #3b241a;
+  --horde-gold: #d4af37;
+  --text-light: #f0e6d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, rgba(138, 3, 3, 0.25), transparent 60%),
+    linear-gradient(180deg, var(--horde-black) 0%, #170c08 100%);
+  color: var(--text-light);
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--horde-gold);
+  text-shadow: 0 0 8px rgba(138, 3, 3, 0.8);
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: var(--horde-gold);
+}
+
+.message {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--horde-gold);
+}

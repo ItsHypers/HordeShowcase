@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 12px;
+  padding: 0 20px;
+}
+
+.input {
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--horde-gold, #d4af37);
+  background: rgba(20, 10, 8, 0.75);
+  color: var(--text-light, #f0e6d6);
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: rgba(240, 230, 214, 0.5);
+}
+
+.input:focus {
+  border-color: var(--horde-red-bright, #c11a1a);
+  box-shadow: 0 0 12px rgba(193, 26, 26, 0.7);
+}
