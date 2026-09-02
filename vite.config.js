@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Base path must match the GitHub Pages repo name: https://<user>.github.io/HordeShowcase/
+// Served from custom domain root (teamhorde.com), not a github.io subpath
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/HordeShowcase/' : '/',
+  base: '/',
   plugins: [react()],
 })
