@@ -33,6 +33,13 @@ export default function AddShinyForm() {
   const toggleFlag = (key) =>
     setForm((prev) => ({ ...prev, flags: { ...prev.flags, [key]: !prev.flags[key] } }))
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && !isSubmitting) {
+      event.preventDefault()
+      event.currentTarget.requestSubmit()
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -66,7 +73,7 @@ export default function AddShinyForm() {
   }
 
   return (
-    <form className={styles.card} onSubmit={handleSubmit}>
+    <form className={styles.card} onKeyDown={handleKeyDown} onSubmit={handleSubmit}>
       <h2 className={styles.cardTitle}>Add a Shiny</h2>
 
       <label className={styles.field}>
