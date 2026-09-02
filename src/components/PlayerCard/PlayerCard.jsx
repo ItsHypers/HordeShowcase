@@ -59,7 +59,7 @@ export default function PlayerCard({ player, data, rank, size = 'normal' }) {
                   src={shiny.sprite}
                   alt={shiny.displayName}
                   loading="lazy"
-                  className={`${styles.sprite} ${isUnavailable ? styles.spriteUnavailable : ''}`}
+                  className={`${styles.sprite} ${isAlpha ? styles.spriteAlpha : ''} ${isUnavailable ? styles.spriteUnavailable : ''}`}
                   onError={() => setBrokenSprites((prev) => new Set(prev).add(key))}
                 />
               ) : (
