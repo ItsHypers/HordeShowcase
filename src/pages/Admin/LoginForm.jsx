@@ -12,10 +12,15 @@ export default function LoginForm({ onLoggedIn }) {
     e.preventDefault()
     setIsSubmitting(true)
     setError(null)
-    const ok = await login(username, password)
-    setIsSubmitting(false)
-    if (ok) onLoggedIn()
-    else setError('Invalid username or password.')
+    try {
+      const ok = await login(username, password)
+      if (ok) onLoggedIn()
+      else setError('Invalid username or password.')
+    } catch (err) {
+      setError(err.message || 'Unable to reach the server. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (

@@ -11,9 +11,6 @@ const outImagesDir = path.join(rootDir, 'public', 'images')
 mkdirSync(outDir, { recursive: true })
 mkdirSync(outImagesDir, { recursive: true })
 
-const shinyDatabase = JSON.parse(readFileSync(path.join(dataDir, 'shiny_database'), 'utf8'))
-writeFileSync(path.join(outDir, 'players.json'), JSON.stringify(shinyDatabase))
-
 // Flattens generation.json's evolution-line groupings into a sorted list of display
 // names, used to power the Pokemon autocomplete on the admin "Add a Shiny" form.
 const generations = JSON.parse(readFileSync(path.join(dataDir, 'generation.json'), 'utf8'))
@@ -25,5 +22,5 @@ writeFileSync(path.join(outDir, 'pokemon-names.json'), JSON.stringify(pokemonNam
 
 copyFileSync(path.join(rootDir, 'images', 'logo.png'), path.join(outImagesDir, 'logo.png'))
 
-console.log(`[build-data] Wrote ${Object.keys(shinyDatabase).length} players and ${pokemonNames.length} Pokemon names.`)
+console.log(`[build-data] Wrote ${pokemonNames.length} Pokemon names.`)
 

@@ -70,7 +70,7 @@ export default function AddShinyForm() {
       <h2 className={styles.cardTitle}>Add a Shiny</h2>
 
       <label className={styles.field}>
-        <span>Player</span>
+        <span>Player*</span>
         <input
           list="admin-player-list"
           value={form.player}
@@ -86,7 +86,7 @@ export default function AddShinyForm() {
       </label>
 
       <label className={styles.field}>
-        <span>Pokémon</span>
+        <span>Pokémon*</span>
         <input
           list="admin-species-list"
           value={form.pokemon}

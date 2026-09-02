@@ -7,7 +7,9 @@
     "build-data": "node scripts/build-data.mjs",
     "dev": "npm run build-data && vite",
     "build": "npm run build-data && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "worker:dev": "npm run dev --prefix worker",
+    "worker:deploy": "npm run deploy --prefix worker"
   },
   "dependencies": {
     "react": "^18.3.1",
