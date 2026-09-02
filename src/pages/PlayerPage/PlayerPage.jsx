@@ -46,7 +46,7 @@ export default function PlayerPage({ player }) {
         className={styles.back}
         onClick={(e) => {
           e.preventDefault()
-          navigate('/')
+          navigate('/showcase')
         }}
       >
         ← Back to the Horde

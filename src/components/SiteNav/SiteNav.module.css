@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.tab {
+  border: 1px solid var(--horde-gold, #d4af37);
+  background: transparent;
+  color: var(--text-light, #f0e6d6);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tab:hover {
+  transform: translateY(-1px);
+}
+
+.tabActive {
+  background: var(--horde-red, #8a0303);
+  border-color: var(--horde-red-bright, #c11a1a);
+}

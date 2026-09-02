@@ -120,3 +120,34 @@ export async function fetchPokemonNames() {
   return [...new Set(await res.json())]
 }
 
+// Home page blog-style posts (events, social media shout-outs, etc.).
+export async function fetchPosts() {
+  return request('/posts', { method: 'GET' })
+}
+
+export async function createPost(post) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request('/posts', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify(post),
+  })
+}
+
+export async function updatePost(id, post) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/posts/${encodeURIComponent(id)}`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify(post),
+  })
+}
+
+export async function deletePost(id) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/posts/${encodeURIComponent(id)}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  })
+}
+

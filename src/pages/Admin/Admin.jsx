@@ -4,12 +4,14 @@ import LoginForm from './LoginForm.jsx'
 import AddShinyForm from './AddShinyForm.jsx'
 import BulkAddForm from './BulkAddForm.jsx'
 import EditPlayerForm from './EditPlayerForm.jsx'
+import AddPostForm from './AddPostForm.jsx'
 import styles from './Admin.module.css'
 
 const TABS = [
   { key: 'single', label: 'Add a Shiny' },
   { key: 'bulk', label: 'Bulk Add' },
   { key: 'edit', label: 'Edit Player' },
+  { key: 'homepage', label: 'Home Page' },
 ]
 
 export default function Admin() {
@@ -27,7 +29,7 @@ export default function Admin() {
         <h1 className={styles.title}>Horde Admin</h1>
         {loggedIn && (
           <div className={styles.headerActions}>
-            <a className={styles.showcaseButton} href={import.meta.env.BASE_URL}>
+            <a className={styles.showcaseButton} href={`${import.meta.env.BASE_URL}showcase`}>
               Showcase
             </a>
             <button type="button" className={styles.logoutButton} onClick={handleLogout}>
@@ -54,6 +56,7 @@ export default function Admin() {
           {activeTab === 'single' && <AddShinyForm />}
           {activeTab === 'bulk' && <BulkAddForm />}
           {activeTab === 'edit' && <EditPlayerForm />}
+          {activeTab === 'homepage' && <AddPostForm />}
         </>
       ) : (
         <LoginForm onLoggedIn={() => setLoggedIn(true)} />

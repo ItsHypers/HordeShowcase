@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useShinyData } from '../../hooks/useShinyData'
 import PlayerCard from '../../components/PlayerCard/PlayerCard.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx'
+import SiteNav from '../../components/SiteNav/SiteNav.jsx'
 import { navigate } from '../../lib/navigation.js'
 import styles from './ShinyShowcase.module.css'
 
@@ -109,6 +110,8 @@ export default function ShinyShowcase() {
           </p>
         </div>
       </header>
+
+      <SiteNav active="/showcase" />
 
       <SearchBar value={search} onChange={setSearch} />
 
