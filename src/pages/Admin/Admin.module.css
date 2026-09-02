@@ -89,7 +89,8 @@
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   background: rgba(11, 7, 5, 0.8);
@@ -193,6 +194,111 @@
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+}
+
+.compactForm,
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+}
+
+.shinyList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listTitle {
+  margin: 6px 0 0;
+  font-size: 1.1rem;
+}
+
+.shinyRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 6px;
+  background: rgba(11, 7, 5, 0.6);
+  padding: 8px;
+  cursor: grab;
+}
+
+.shinyRowDragging {
+  cursor: grabbing;
+  opacity: 0.5;
+}
+
+.shinySprite {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.shinySpriteUnavailable {
+  filter: grayscale(1);
+}
+
+.shinyName {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  font-weight: 700;
+}
+
+.shinyName small {
+  color: rgba(240, 230, 214, 0.7);
+  font-weight: 400;
+}
+
+.shinyActions {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton {
+  border: 1px solid var(--horde-gold, #d4af37);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-light, #f0e6d6);
+  padding: 7px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.backButton {
+  align-self: flex-start;
+  border: 1px solid var(--horde-gold, #d4af37);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-light, #f0e6d6);
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deleteButton {
+  align-self: flex-start;
+  border: 1px solid #ff8080;
+  background: transparent;
+  color: #ffb0b0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .error {

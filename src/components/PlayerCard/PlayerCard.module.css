@@ -186,6 +186,10 @@
   image-rendering: pixelated;
 }
 
+.spriteUnavailable {
+  filter: grayscale(1);
+}
+
 .spriteFallback {
   display: flex;
   align-items: center;

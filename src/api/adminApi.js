@@ -53,6 +53,58 @@ export async function addShiny(player, shiny) {
   })
 }
 
+export async function addShinies(entries) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request('/shinies/bulk', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ entries }),
+  })
+}
+
+export async function renamePlayer(player, newPlayer) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/players/${encodeURIComponent(player)}`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ player: newPlayer }),
+  })
+}
+
+export async function deletePlayer(player) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/players/${encodeURIComponent(player)}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  })
+}
+
+export async function reorderShinies(player, order) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/players/${encodeURIComponent(player)}/shinies/order`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ order }),
+  })
+}
+
+export async function updateShiny(player, id, shiny) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/shinies/${encodeURIComponent(player)}/${encodeURIComponent(id)}`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ shiny }),
+  })
+}
+
+export async function deleteShiny(player, id) {
+  const token = sessionStorage.getItem(TOKEN_KEY)
+  return request(`/shinies/${encodeURIComponent(player)}/${encodeURIComponent(id)}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${token}` },
+  })
+}
+
 // Fetches the live shiny showcase dataset from the Worker (backed by the SHINY_DATA KV namespace).
 export async function fetchShinyData() {
   return request('/shinies', { method: 'GET' })
@@ -65,6 +117,6 @@ export async function fetchPlayerNames() {
 
 export async function fetchPokemonNames() {
   const res = await fetch(`${import.meta.env.BASE_URL}data/pokemon-names.json`)
-  return res.json()
+  return [...new Set(await res.json())]
 }
 

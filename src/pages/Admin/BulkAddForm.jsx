@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { addShiny } from '../../api/adminApi.js'
+import { addShinies } from '../../api/adminApi.js'
 import { resolveFlagTag, buildFlagFields } from './flags.js'
 import styles from './Admin.module.css'
 
@@ -75,24 +75,18 @@ export default function BulkAddForm() {
   const handleSubmitAll = async () => {
     if (!preview?.entries.length) return
     setIsSubmitting(true)
-    const failures = []
-    let successCount = 0
-
-    for (const entry of preview.entries) {
-      const shiny = { Pokemon: entry.pokemon, ...buildFlagFields(entry.flagKeys) }
-      try {
-        await addShiny(entry.player, shiny)
-        successCount += 1
-      } catch (err) {
-        failures.push({ entry, message: err.message || 'Failed to add shiny.' })
-      }
-    }
-
-    setIsSubmitting(false)
-    setResults({ successCount, failures })
-    if (!failures.length) {
+    try {
+      await addShinies(preview.entries.map((entry) => ({
+        player: entry.player,
+        shiny: { Pokemon: entry.pokemon, ...buildFlagFields(entry.flagKeys) },
+      })))
+      setResults({ successCount: preview.entries.length, failures: [] })
       setText('')
       setPreview(null)
+    } catch (err) {
+      setResults({ successCount: 0, failures: [{ message: err.message || 'Failed to add shinies.' }] })
+    } finally {
+      setIsSubmitting(false)
     }
   }
 

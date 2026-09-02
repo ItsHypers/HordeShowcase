@@ -6,7 +6,9 @@ import styles from './PlayerCard.module.css'
 export default function PlayerCard({ player, data, rank, size = 'normal' }) {
   const [activeKey, setActiveKey] = useState(null)
   const [brokenSprites, setBrokenSprites] = useState(() => new Set())
-  const shinies = Object.entries(data.shinies || {})
+  const shinies = (data.shiny_order || Object.keys(data.shinies || {}))
+    .filter((id) => data.shinies?.[id])
+    .map((id) => [id, data.shinies[id]])
   const trophy = TROPHIES[rank]
   const isLarge = size === 'large'
 
@@ -42,6 +44,7 @@ export default function PlayerCard({ player, data, rank, size = 'normal' }) {
           const icons = badges.filter(([, , icon]) => icon)
           const isAlpha = isTruthyFlag(shiny.Alpha)
           const isSecret = isTruthyFlag(shiny['Secret Shiny'])
+          const isUnavailable = isTruthyFlag(shiny.Sold) || isTruthyFlag(shiny.Killed)
           const isActive = activeKey === key
           return (
             <div
@@ -56,7 +59,7 @@ export default function PlayerCard({ player, data, rank, size = 'normal' }) {
                   src={shiny.sprite}
                   alt={shiny.displayName}
                   loading="lazy"
-                  className={styles.sprite}
+                  className={`${styles.sprite} ${isUnavailable ? styles.spriteUnavailable : ''}`}
                   onError={() => setBrokenSprites((prev) => new Set(prev).add(key))}
                 />
               ) : (

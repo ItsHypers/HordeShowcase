@@ -3,11 +3,13 @@ import { isAuthenticated, logout } from '../../api/adminApi.js'
 import LoginForm from './LoginForm.jsx'
 import AddShinyForm from './AddShinyForm.jsx'
 import BulkAddForm from './BulkAddForm.jsx'
+import EditPlayerForm from './EditPlayerForm.jsx'
 import styles from './Admin.module.css'
 
 const TABS = [
   { key: 'single', label: 'Add a Shiny' },
   { key: 'bulk', label: 'Bulk Add' },
+  { key: 'edit', label: 'Edit Player' },
 ]
 
 export default function Admin() {
@@ -49,7 +51,9 @@ export default function Admin() {
               </button>
             ))}
           </div>
-          {activeTab === 'single' ? <AddShinyForm /> : <BulkAddForm />}
+          {activeTab === 'single' && <AddShinyForm />}
+          {activeTab === 'bulk' && <BulkAddForm />}
+          {activeTab === 'edit' && <EditPlayerForm />}
         </>
       ) : (
         <LoginForm onLoggedIn={() => setLoggedIn(true)} />
