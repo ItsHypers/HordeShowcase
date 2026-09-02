@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useShinyData } from '../../hooks/useShinyData'
 import PlayerCard from '../../components/PlayerCard/PlayerCard.jsx'
 import SearchBar from '../../components/SearchBar/SearchBar.jsx'
+import { navigate } from '../../lib/navigation.js'
 import styles from './ShinyShowcase.module.css'
 
 const INITIAL_COUNT = 10
@@ -95,7 +96,7 @@ export default function ShinyShowcase() {
         <button
           type="button"
           className={styles.crestButton}
-          onClick={() => { window.location.href = `${import.meta.env.BASE_URL}admin` }}
+          onClick={() => navigate('/admin')}
           aria-label="Horde Crest"
         >
           <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Horde Crest" className={styles.crest} />
