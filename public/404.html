@@ -8,8 +8,7 @@
       // refresh) 404s here. Stash the intended path and bounce to index.html,
       // which restores it via the inline script in index.html.
       sessionStorage.setItem('horde_redirect_path', location.pathname + location.search + location.hash)
-      var base = location.pathname.split('/').slice(0, 2).join('/') || '/'
-      location.replace(base + '/')
+      location.replace('/')
     </script>
   </head>
   <body>Redirecting…</body>
